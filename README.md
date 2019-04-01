@@ -5,7 +5,7 @@ This R package can be used to conduct nonparametric goodness-of-fit tests for un
 # Installation
 
     library(devtools)
-    install_github("Harrindy/TestUSO") 
+    install_github("Harrindy/TestUSO",force=TRUE) 
 
 # Illustration:
 
