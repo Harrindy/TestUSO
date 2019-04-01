@@ -18,7 +18,7 @@ This R package can be used to conduct nonparametric goodness-of-fit tests for un
     EstODC(X,Y,graph=FALSE)    
 
     #Calculate the least star-shaped majorant of the sample ODC Rmn:
-    LSM(X,Y) 
+    LSM(X,Y,graph=TRUE) 
 
     #Conduct the test via the approaches proposed by Tang et al. (2017) and Wang et al. (2018+):
     GoF4USO(X,Y,alpha=0.05,graph=TRUE) 
