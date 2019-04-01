@@ -33,10 +33,10 @@ This R package can be used to conduct nonparametric goodness-of-fit tests for un
     #[1] "Reject_USO_iso: reject or not based on the isotonic fitting"
     #[1] "bs_cv: critical values based on the resample method"
     #[1] "Reject_USO_bs: reject or not based on the resample method"
-    #               Test_statistic Fixed_cv Reject_USO_fix     lf_cv Reject_USO_lf    iso_cv Reject_USO_iso     bs_cv Reject_USO_bs
-    #p=1            0.03968089    0.580              0 0.6137245             0 0.1069128              0 0.1879498             0
-    #p=2            0.05587717    0.676              0 0.6911214             0 0.1687542              0 0.2891967             0
-    #p=infinity     0.20701967    1.353              0 1.3118565             0 0.5672693              0 0.8625819             0
+    #               Test_statistic Fixed_cv Reject_USO_fix      lf_cv Reject_USO_lf    iso_cv Reject_USO_iso     bs_cv Reject_USO_bs
+    #p=1            0.03968089        0.580              0  0.6137245             0 0.1069128              0 0.1879498             0
+    #p=2            0.05587717        0.676              0  0.6911214             0 0.1687542              0 0.2891967             0
+    #p=infinity     0.20701967        1.353              0 1.3118565             0 0.5672693              0 0.8625819             0
 
 # References:
 
