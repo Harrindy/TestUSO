@@ -21,7 +21,7 @@ This R package can be used to conduct nonparametric goodness-of-fit tests for un
     LSM(X,Y) 
 
     #Conduct the test via the approaches proposed by Tang et al. (2017) and Wang et al. (2018+):
-    GoF4USO(X,Y,alpha=0.05) 
+    GoF4USO(X,Y,alpha=0.05,graph=TRUE) 
 
 # References:
 
