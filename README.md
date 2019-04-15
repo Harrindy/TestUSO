@@ -25,7 +25,7 @@ This R package can be used to conduct nonparametric goodness-of-fit tests for un
    
    ![Optional Text](../master/MRmn.png)
     
-    #Conduct the test via the approaches proposed by Tang et al. (2017) and Wang et al. (2018+):
+    #Conduct the test via the approaches proposed by Tang et al. (2017) and Wang et al. (2019):
     GoF4USO(X,Y,alpha=0.05,graph=TRUE) 
     
    ![Optional Text](../master/NewMethods.png)
