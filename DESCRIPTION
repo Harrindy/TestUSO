@@ -5,18 +5,10 @@ Date: 2019-03-31
 Authors@R: c(person("Dewei", "Wang", role = c("aut", "cre"),email = "deweiwang@stat.sc.edu"), person("ChuanFa","Tang",role="aut"), person("Joshua","Tebbs",rol="aut"))
 Author: Dewei Wang [aut, cre], ChuanFa Tang [aut], Joshua Tebbs [aut]
 Maintainer: Dewei Wang <deweiwang@stat.sc.edu>
-Description: A Nonparametric Goodness-of-fit Test of Uniform Stochastic Ordering
-<<<<<<< HEAD
-Depends: R (>= 3.5.2)
-=======
+Description: Nonparametric Goodness-of-fit Tests for Uniform Stochastic Ordering
 Depends: R (>= 3.5.2),OrdMonReg
->>>>>>> a96c76a9f9211cbca7446230dfad8d0fbdcf9d82
 License: GPL (>=2)
 URL: http://people.stat.sc.edu/wang528/Research.html
 Encoding: UTF-8
 LazyData: true
-<<<<<<< HEAD
 RoxygenNote: 6.1.1.9000
-=======
-RoxygenNote: 6.0.1
->>>>>>> a96c76a9f9211cbca7446230dfad8d0fbdcf9d82
