@@ -38,12 +38,12 @@ GoF4USO=function(X,Y,alpha=0.05,graph=FALSE,L=1000,B=1000){
   Mmn_l1=l1*sqrt(m*n/(m+n))
   Mmn_l2=l2*sqrt(m*n/(m+n))
   Mmn_lsup=lsup*sqrt(m*n/(m+n))
-  
+
   u_slope=c()
   u_slope= (1-Rmn_data[1:n])/(1-u[1:n])
   Iso_r=BoundedAntiMean(u_slope[2:n],w=rep(1/n,n-1),a=rep(0,n-1),b=rep(1,n-1))
   Iso_R=c(1-(1-u[1:n])*c(1,Iso_r),1)
-  
+
   if(graph)
   {
     #plot(u,Rmn_data,type='s',xlim=c(0,1),ylim=c(0,1),col="black",lwd=1,ylab=expression(paste(R[mn](u),", ",MR[mn](u))),cex.lab=1)
@@ -58,15 +58,15 @@ GoF4USO=function(X,Y,alpha=0.05,graph=FALSE,L=1000,B=1000){
     }
     lines(u,Iso_R,lwd=2,col="red",lty=2)
   }
-  
+
   ind=1:head(which(Iso_R==1),1)
   sample.y=u[ind]
   sample.x=Iso_R[ind]
   inv_iso=approxfun(sample.x,sample.y,method="linear")
-  
+
   U=ecdf(X)(X)
   V=ecdf(Y)(Y)
-  
+
   lsmrate.b=c()
   CK=ceiling(B*alpha)
   for(b in 1:CK)
@@ -89,7 +89,7 @@ GoF4USO=function(X,Y,alpha=0.05,graph=FALSE,L=1000,B=1000){
   }
   lsmrate.b=apply(lsmrate.b,2,sort,decreasing=TRUE)
   alpha.K=tail(which(lsmrate.b[,n]==1),1)
-  
+
   lsmrate.b=c()
   CK=ceiling(B*alpha)
   for(b in 1:CK)
@@ -110,7 +110,7 @@ GoF4USO=function(X,Y,alpha=0.05,graph=FALSE,L=1000,B=1000){
     ind=comp.b>temp.b
     lsmrate.b[1,ind]=comp.b[ind]
   }
-  
+
   lsmrate.b=apply(lsmrate.b,2,sort,decreasing=TRUE)
   fix.rate=lsmrate.b[alpha.K,]
   fix.rate=sort(fix.rate,decreasing = TRUE)
@@ -120,7 +120,7 @@ GoF4USO=function(X,Y,alpha=0.05,graph=FALSE,L=1000,B=1000){
   sample.x=lb[ind]
   sample.r=fix.rate[1:(length(ind)-1)]
   inv_rs=approxfun(sample.x,sample.y,method="linear")
-  
+
   if(graph==TRUE)
   {
     lines(u,lb,lwd=2,col="green",lty=4)
@@ -131,7 +131,7 @@ GoF4USO=function(X,Y,alpha=0.05,graph=FALSE,L=1000,B=1000){
                            expression(hat(R)[bs])),
            lty=c(1,1,3,2,4),lwd=c(1,1,1,2,2),col=c("black","blue","black","red","green"))
   }
-  
+
   TS.lf=c()
   TS.iso=c()
   TS.rs=c()
@@ -157,35 +157,33 @@ GoF4USO=function(X,Y,alpha=0.05,graph=FALSE,L=1000,B=1000){
   lf_cv=apply(TS.lf,2,quantile,prob=1-alpha)
   iso_cv=apply(TS.iso,2,quantile,prob=1-alpha)
   bs_cv=apply(TS.rs,2,quantile,prob=1-alpha)
-  
+
   if(alpha==0.01){Fixed_cv=c(0.751, 0.860, 1.623)
   }else if(alpha==0.05){Fixed_cv=c(0.580, 0.676, 1.353)
   }else if(alpha==0.1){Fixed_cv=c(0.496, 0.586, 1.219)
   }else{print("please use significance level 0.01, 0.05, or 0.1 for the Tang et al. (2017) approach")}
-  
+
   Test_statistic=c(Mmn_l1,Mmn_l2,Mmn_lsup)
   Reject_USO_bs=1*c(Test_statistic>bs_cv)
   Reject_USO_iso=1*c(Test_statistic>iso_cv)
   Reject_USO_lf=1*c(Test_statistic>lf_cv)
   Reject_USO_fix=1*c(Test_statistic>Fixed_cv)
-  
-  res=cbind(Test_statistic, 
+
+  res=cbind(Test_statistic,
             Fixed_cv,Reject_USO_fix,
             lf_cv,Reject_USO_lf,
             iso_cv,Reject_USO_iso,
             bs_cv, Reject_USO_bs)
   res=data.frame(res)
   rownames(res)=c("p=1","p=2","p=infinity")
-  print("1: reject USO; 0: do not rejct USO")
-  print("Fixed_cv: critical values based on the limiting distribution at the least favorable configuration")
-  print("Reject_USO_fix: reject or not based on the limiting distribution at the least favorable configuration")
-  print("lf_cv: critical values based on the finite distribution at the least favorable configuration")
-  print("Reject_USO_lf: reject or not based on the finite distribution at the least favorable configuration")
-  print("iso_cv: critical values based on the isotonic fitting")
-  print("Reject_USO_iso: reject or not based on the isotonic fitting")
-  print("bs_cv: critical values based on the resample method")
-  print("Reject_USO_bs: reject or not based on the resample method")
-  #print(paste("the tuning parameter is ",alpha.K,sep=""))
+  print("Fixed_cv: critical values using Tang et al. (2017)")
+  print("Reject_USO_fix: reject (1) or not (0) using Tang et al. (2017)")
+  print("lf_cv: critical values using the finie-sample version of Tang et al. (2017)")
+  print("Reject_USO_lf: reject (1) or not (0) using the finie-sample version of Tang et al. (2017)")
+  print("iso_cv: critical values using method one of Wang et al. (2019)")
+  print("Reject_USO_iso: reject (1) or not (0) using method one of Wang et al. (2019)")
+  print("bs_cv: critical values using method two of Wang et al. (2019)")
+  print("Reject_USO_bs: reject (1) or not (0) using method two of Wang et al. (2019)")
   return(res)
 }
 
