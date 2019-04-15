@@ -30,15 +30,14 @@ This R package can be used to conduct nonparametric goodness-of-fit tests for un
     
    ![Optional Text](../master/NewMethods.png)
     
-    #[1] "1: reject USO; 0: do not rejct USO"
-    #[1] "Fixed_cv: critical values based on the limiting distribution at the least favorable configuration"
-    #[1] "Reject_USO_fix: reject or not based on the limiting distribution at the least favorable configuration"
-    #[1] "lf_cv: critical values based on the finite distribution at the least favorable configuration"
-    #[1] "Reject_USO_lf: reject or not based on the finite distribution at the least favorable configuration"
-    #[1] "iso_cv: critical values based on the isotonic fitting"
-    #[1] "Reject_USO_iso: reject or not based on the isotonic fitting"
-    #[1] "bs_cv: critical values based on the resample method"
-    #[1] "Reject_USO_bs: reject or not based on the resample method"
+    # [1] "Fixed_cv: critical values using Tang et al. (2017)"
+    # [1] "Reject_USO_fix: reject (1) or not (0) using Tang et al. (2017)"
+    # [1] "lf_cv: critical values using the finie-sample version of Tang et al. (2017)"
+    # [1] "Reject_USO_lf: reject (1) or not (0) using the finie-sample version of Tang et al. (2017)"
+    # [1] "iso_cv: critical values using method one of Wang et al. (2019)"
+    # [1] "Reject_USO_iso: reject (1) or not (0) using method one of Wang et al. (2019)"
+    # [1] "bs_cv: critical values using method two of Wang et al. (2019)"
+    # [1] "Reject_USO_bs: reject (1) or not (0) using method two of Wang et al. (2019)"
     #               Test_statistic Fixed_cv Reject_USO_fix      lf_cv Reject_USO_lf    iso_cv Reject_USO_iso     bs_cv Reject_USO_bs
     #p=1            0.03968089        0.580              0  0.6137245             0 0.1069128              0 0.1879498             0
     #p=2            0.05587717        0.676              0  0.6911214             0 0.1687542              0 0.2891967             0
