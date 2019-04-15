@@ -47,7 +47,7 @@ This R package can be used to conduct nonparametric goodness-of-fit tests for un
 
 Tang, C., Wang, D., and Tebbs, J. (2017). Nonparametric goodness-of-fit tests for uniform stochastic ordering. Annals of Statistic 48, 2565-2589.
 
-Wang, D., Tang, C., and Tebbs, J. (2018+). A more powerful goodness-of-fit test for uniform stochastic ordering. Submitted for publication.
+Wang, D., Tang, C., and Tebbs, J. (2019+). More powerful goodness-of-fit tests for uniform stochastic ordering. Submitted for publication.
 
 # Author:
 Dewei Wang (deweiwang@stat.sc.edu)
