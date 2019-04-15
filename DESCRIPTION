@@ -1,5 +1,5 @@
 Package: TestUSO
-Title: A Nonparametric Goodness-of-fit Test of Uniform Stochastic Ordering
+Title: Nonparametric Goodness-of-fit Tests of Uniform Stochastic Ordering
 Version: 0.0.1.1
 Date: 2019-03-31
 Authors@R: c(person("Dewei", "Wang", role = c("aut", "cre"),email = "deweiwang@stat.sc.edu"), person("ChuanFa","Tang",role="aut"), person("Joshua","Tebbs",rol="aut"))
