@@ -1,6 +1,6 @@
 # TestUSO
 
-This R package can be used to conduct nonparametric goodness-of-fit tests for uniform stochastic ordering proposed by Tang et al. (2017) and Wang et al. (2019).
+This R package provides nonparametric goodness-of-fit tests for uniform stochastic ordering. These tests are proposed by Tang et al. (2017) and Wang et al. (2019).
 
 # Installation
 
