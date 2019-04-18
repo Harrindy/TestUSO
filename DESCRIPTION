@@ -6,7 +6,7 @@ Authors@R: c(person("Dewei", "Wang", role = c("aut", "cre"),email = "deweiwang@s
 Author: Dewei Wang [aut, cre], ChuanFa Tang [aut], Joshua Tebbs [aut]
 Maintainer: Dewei Wang <deweiwang@stat.sc.edu>
 Description: Nonparametric Goodness-of-fit Tests for Uniform Stochastic Ordering
-Depends: R (>= 3.5.2),OrdMonReg
+Depends: R (>= 3.4.1),OrdMonReg
 License: GPL (>=2)
 URL: http://people.stat.sc.edu/wang528/Research.html
 Encoding: UTF-8
