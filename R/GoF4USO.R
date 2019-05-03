@@ -127,8 +127,8 @@ GoF4USO=function(X,Y,alpha=0.05,graph=FALSE,L=1000,B=1000){
     legend("bottomright",c(expression(R[mn]),
                            expression(MR[mn]),
                            expression(R[0]),
-                           expression(hat(R)[iso]),
-                           expression(hat(R)[bs])),
+                           expression(hat(R)[AS]),
+                           expression(hat(R)[RT])),
            lty=c(1,1,3,2,4),lwd=c(1,1,1,2,2),col=c("black","blue","black","red","green"))
   }
 
