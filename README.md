@@ -30,16 +30,16 @@ This R package provides nonparametric goodness-of-fit tests for uniform stochast
     
    ![Optional Text](../master/NewMethods.png)
     
-    # [1] "Fixed_cv: critical values using Tang et al. (2017)"
-    # [1] "Reject_USO_fix: reject (1) or not (0) using Tang et al. (2017)"
-    # [1] "iso_cv: critical values using method one of Wang et al. (2019)"
-    # [1] "Reject_USO_iso: reject (1) or not (0) using method one of Wang et al. (2019)"
-    # [1] "bs_cv: critical values using method two of Wang et al. (2019)"
-    # [1] "Reject_USO_bs: reject (1) or not (0) using method two of Wang et al. (2019)"
-    #               Test_statistic Fixed_cv Reject_USO_fix      lf_cv Reject_USO_lf    iso_cv Reject_USO_iso     bs_cv Reject_USO_bs
-    #p=1            0.03968089        0.580              0  0.6137245             0 0.1069128              0 0.1879498             0
-    #p=2            0.05587717        0.676              0  0.6911214             0 0.1687542              0 0.2891967             0
-    #p=infinity     0.20701967        1.353              0  1.3118565             0 0.5672693              0 0.8625819             0
+    [1] "Fixed_cv: critical values using Tang et al. (2017)"
+    [1] "Reject_USO_fix: reject (1) or not (0) using Tang et al. (2017)"
+    [1] "AS_cv: critical values using method one of Wang et al. (2019)"
+    [1] "Reject_USO_AS: reject (1) or not (0) using method one of Wang et al. (2019)"
+    [1] "RT_cv: critical values using method two of Wang et al. (2019)"
+    [1] "Reject_USO_RT: reject (1) or not (0) using method two of Wang et al. (2019)"
+               Test_statistic Fixed_cv Reject_USO_fix     AS_cv Reject_USO_AS     RT_cv Reject_USO_RT
+    p=1            0.03968089    0.580              0 0.1028982             0 0.1736021             0
+    p=2            0.05587717    0.676              0 0.1586878             0 0.2692576             0
+    p=infinity     0.20701967    1.353              0 0.5865557             0 0.8280787             0
 
 # References:
 
