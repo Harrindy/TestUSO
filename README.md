@@ -32,8 +32,6 @@ This R package provides nonparametric goodness-of-fit tests for uniform stochast
     
     # [1] "Fixed_cv: critical values using Tang et al. (2017)"
     # [1] "Reject_USO_fix: reject (1) or not (0) using Tang et al. (2017)"
-    # [1] "lf_cv: critical values using the finie-sample version of Tang et al. (2017)"
-    # [1] "Reject_USO_lf: reject (1) or not (0) using the finie-sample version of Tang et al. (2017)"
     # [1] "iso_cv: critical values using method one of Wang et al. (2019)"
     # [1] "Reject_USO_iso: reject (1) or not (0) using method one of Wang et al. (2019)"
     # [1] "bs_cv: critical values using method two of Wang et al. (2019)"
