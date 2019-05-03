@@ -132,31 +132,31 @@ GoF4USO=function(X,Y,alpha=0.05,graph=FALSE,L=1000,B=1000){
            lty=c(1,1,3,2,4),lwd=c(1,1,1,2,2),col=c("black","blue","black","red","green"))
   }
 
-  TS.lf=c()
-  TS.iso=c()
-  TS.rs=c()
+  #TS.lf=c()
+  TS.AS=c()
+  TS.RT=c()
   for(b in 1:L)
   {
     U.B=runif(m)
-    X.iso=inv_iso(U.B)
-    X.rs=inv_rs(U.B)
+    X.AS=inv_iso(U.B)
+    X.RT=inv_rs(U.B)
     Y.B=runif(n)
-    LSMRmn_data.lf=LSM(U.B,Y.B,ts=TRUE)
-    LSMRmn_data.iso=LSM(X.iso,Y.B,ts=TRUE)
-    LSMRmn_data.rs=LSM(X.rs,Y.B,ts=TRUE)
-    TS.lf=rbind(TS.lf,c(LSMRmn_data.lf$Mmn_l1,
-                        LSMRmn_data.lf$Mmn_l2,
-                        LSMRmn_data.lf$Mmn_lsup))
-    TS.iso=rbind(TS.iso,c(LSMRmn_data.iso$Mmn_l1,
-                          LSMRmn_data.iso$Mmn_l2,
-                          LSMRmn_data.iso$Mmn_lsup))
-    TS.rs=rbind(TS.rs,c(LSMRmn_data.rs$Mmn_l1,
-                        LSMRmn_data.rs$Mmn_l2,
-                        LSMRmn_data.rs$Mmn_lsup))
+    #LSMRmn_data.lf=LSM(U.B,Y.B,ts=TRUE)
+    LSMRmn_data.AS=LSM(X.AS,Y.B,ts=TRUE)
+    LSMRmn_data.RT=LSM(X.RT,Y.B,ts=TRUE)
+    #TS.lf=rbind(TS.lf,c(LSMRmn_data.lf$Mmn_l1,
+    #                    LSMRmn_data.lf$Mmn_l2,
+    #                    LSMRmn_data.lf$Mmn_lsup))
+    TS.AS=rbind(TS.AS,c(LSMRmn_data.AS$Mmn_l1,
+                          LSMRmn_data.AS$Mmn_l2,
+                          LSMRmn_data.AS$Mmn_lsup))
+    TS.RT=rbind(TS.RT,c(LSMRmn_data.RT$Mmn_l1,
+                        LSMRmn_data.RT$Mmn_l2,
+                        LSMRmn_data.RT$Mmn_lsup))
   }
-  lf_cv=apply(TS.lf,2,quantile,prob=1-alpha)
-  iso_cv=apply(TS.iso,2,quantile,prob=1-alpha)
-  bs_cv=apply(TS.rs,2,quantile,prob=1-alpha)
+  #lf_cv=apply(TS.lf,2,quantile,prob=1-alpha)
+  AS_cv=apply(TS.AS,2,quantile,prob=1-alpha)
+  RT_cv=apply(TS.RT,2,quantile,prob=1-alpha)
 
   if(alpha==0.01){Fixed_cv=c(0.751, 0.860, 1.623)
   }else if(alpha==0.05){Fixed_cv=c(0.580, 0.676, 1.353)
@@ -164,26 +164,26 @@ GoF4USO=function(X,Y,alpha=0.05,graph=FALSE,L=1000,B=1000){
   }else{print("please use significance level 0.01, 0.05, or 0.1 for the Tang et al. (2017) approach")}
 
   Test_statistic=c(Mmn_l1,Mmn_l2,Mmn_lsup)
-  Reject_USO_bs=1*c(Test_statistic>bs_cv)
-  Reject_USO_iso=1*c(Test_statistic>iso_cv)
-  Reject_USO_lf=1*c(Test_statistic>lf_cv)
+  Reject_USO_RT=1*c(Test_statistic>RT_cv)
+  Reject_USO_AS=1*c(Test_statistic>AS_cv)
+  #Reject_USO_lf=1*c(Test_statistic>lf_cv)
   Reject_USO_fix=1*c(Test_statistic>Fixed_cv)
 
   res=cbind(Test_statistic,
             Fixed_cv,Reject_USO_fix,
-            lf_cv,Reject_USO_lf,
-            iso_cv,Reject_USO_iso,
-            bs_cv, Reject_USO_bs)
+            #lf_cv,Reject_USO_lf,
+            AS_cv,Reject_USO_AS,
+            RT_cv,Reject_USO_RT)
   res=data.frame(res)
   rownames(res)=c("p=1","p=2","p=infinity")
   print("Fixed_cv: critical values using Tang et al. (2017)")
   print("Reject_USO_fix: reject (1) or not (0) using Tang et al. (2017)")
-  print("lf_cv: critical values using the finie-sample version of Tang et al. (2017)")
-  print("Reject_USO_lf: reject (1) or not (0) using the finie-sample version of Tang et al. (2017)")
-  print("iso_cv: critical values using method one of Wang et al. (2019)")
-  print("Reject_USO_iso: reject (1) or not (0) using method one of Wang et al. (2019)")
-  print("bs_cv: critical values using method two of Wang et al. (2019)")
-  print("Reject_USO_bs: reject (1) or not (0) using method two of Wang et al. (2019)")
+  #print("lf_cv: critical values using the finie-sample version of Tang et al. (2017)")
+  #print("Reject_USO_lf: reject (1) or not (0) using the finie-sample version of Tang et al. (2017)")
+  print("AS_cv: critical values using method one of Wang et al. (2019)")
+  print("Reject_USO_AS: reject (1) or not (0) using method one of Wang et al. (2019)")
+  print("RT_cv: critical values using method two of Wang et al. (2019)")
+  print("Reject_USO_RT: reject (1) or not (0) using method two of Wang et al. (2019)")
   return(res)
 }
 
