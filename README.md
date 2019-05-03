@@ -28,7 +28,7 @@ This R package provides nonparametric goodness-of-fit tests for uniform stochast
     #Conduct the test via the approaches proposed by Tang et al. (2017) and Wang et al. (2019):
     GoF4USO(X,Y,alpha=0.05,graph=TRUE) 
     
-   ![Optional Text](../master/NewMethods.png)
+   ![Optional Text](../master/NewMethod.png)
     
     [1] "Fixed_cv: critical values using Tang et al. (2017)"
     [1] "Reject_USO_fix: reject (1) or not (0) using Tang et al. (2017)"
